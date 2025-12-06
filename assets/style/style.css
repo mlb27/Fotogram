@@ -1,0 +1,52 @@
+.site-header {
+    background-color: #070f2b;
+
+    padding: 0 64px;
+    height: 96px;
+}
+.site-header img {
+    height: 64px;
+}
+
+body {
+    background-color: #1b1a55;
+}
+
+.gallery {
+    gap: 32px;
+}
+
+.gallery-img {
+    border-radius: 16px;
+    border-color: #535c91;
+    border-style: solid;
+
+    width: 256px;
+    height: 256px;
+    transition: all 0.35s ease;
+}
+.gallery-img img {
+    border-radius: 16px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.gallery-img:hover {
+    color: #a87cff;
+    transform: translateY(-3px) scale(1.05);
+    transition: all 0.35s ease-in-out;
+
+    cursor: pointer;
+}
+
+footer {
+    padding: 0 64px;
+    height: 96px;
+
+    background-color: #070f2b;
+}
+
+footer img {
+    height: 64px;
+}

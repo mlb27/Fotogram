@@ -1,0 +1,37 @@
+/* Color */
+
+/*      */
+
+/* Text */
+
+.white {
+    color: white;
+}
+
+.t-alig-center {
+    text-align: center;
+}
+
+.fs64 {
+    font-size: 64px;
+}
+
+/* Margin, Padding */
+
+.marg-top-64 {
+    margin-top: 64px;
+}
+
+/* Eigenschaften */
+
+.flex {
+    display: flex;
+}
+
+.align-i-center {
+    align-items: center;
+}
+
+.justify-c-center {
+    justify-content: center;
+}

@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Patrick Hand";
+    src: url("./assets/font/PatrickHand-Regular.ttf")
+        format("truetype-variations");
+}
+
+html,
+body {
+    font-family: "Patrick Hand", cursive;
+}
+
+body {
+    margin: 0;
+}
+
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin-block-end: 0;
+    margin-block-start: 0;
+}
