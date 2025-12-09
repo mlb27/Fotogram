@@ -16,11 +16,17 @@ body {
     gap: 32px;
 }
 
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 180deg;
+    inherits: false;
+}
+
 .gallery-img {
     padding: 3px;
     border-radius: 16px;
     background: linear-gradient(
-        180deg,
+        var(--gradient-angle),
         rgba(160, 240, 253, 1) 0%,
         rgba(135, 50, 248, 1) 33%,
         rgba(246, 78, 133, 1) 66%,
@@ -29,7 +35,8 @@ body {
 
     width: 256px;
     height: 256px;
-    transition: all 0.2s ease-in-out;
+
+    transition: --gradient-angle 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 .gallery-img img {
     border-radius: 16px;
@@ -39,13 +46,7 @@ body {
 }
 
 .gallery-img:hover {
-    background: linear-gradient(
-        90deg,
-        rgba(160, 240, 253, 1) 0%,
-        rgba(135, 50, 248, 1) 33%,
-        rgba(246, 78, 133, 1) 66%,
-        rgba(247, 138, 76, 1) 100%
-    );
+    --gradient-angle: 360deg;
     transform: translateY(-3px) scale(1.05);
 
     cursor: pointer;
