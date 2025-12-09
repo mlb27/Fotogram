@@ -17,13 +17,19 @@ body {
 }
 
 .gallery-img {
+    padding: 3px;
     border-radius: 16px;
-    border-color: #535c91;
-    border-style: solid;
+    background: linear-gradient(
+        180deg,
+        rgba(160, 240, 253, 1) 0%,
+        rgba(135, 50, 248, 1) 33%,
+        rgba(246, 78, 133, 1) 66%,
+        rgba(247, 138, 76, 1) 100%
+    );
 
     width: 256px;
     height: 256px;
-    transition: all 0.35s ease;
+    transition: all 0.2s ease-in-out;
 }
 .gallery-img img {
     border-radius: 16px;
@@ -33,9 +39,14 @@ body {
 }
 
 .gallery-img:hover {
-    color: #a87cff;
+    background: linear-gradient(
+        90deg,
+        rgba(160, 240, 253, 1) 0%,
+        rgba(135, 50, 248, 1) 33%,
+        rgba(246, 78, 133, 1) 66%,
+        rgba(247, 138, 76, 1) 100%
+    );
     transform: translateY(-3px) scale(1.05);
-    transition: all 0.35s ease-in-out;
 
     cursor: pointer;
 }
