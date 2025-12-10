@@ -16,6 +16,10 @@
     font-size: 64px;
 }
 
+.fs76 {
+    font-size: 76px;
+}
+
 /* Margin, Padding */
 
 .marg-top-64 {
@@ -34,4 +38,8 @@
 
 .justify-c-center {
     justify-content: center;
+}
+
+.flex-dir-column {
+    flex-direction: column;
 }

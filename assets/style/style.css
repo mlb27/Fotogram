@@ -62,3 +62,13 @@ footer {
 footer img {
     height: 64px;
 }
+
+.album {
+    transition: all 0.25s ease;
+}
+
+.back{
+    width: 48px;
+    height: 48px;
+    filter: invert(1);
+}

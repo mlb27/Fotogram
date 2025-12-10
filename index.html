@@ -13,58 +13,28 @@
         />
         <title>Fotogram</title>
     </head>
-    <body>
+    <body onload="loadAlbums()">
         <header class="site-header flex align-i-center">
             <a href="#"
-                ><img src="./assets/svg/Fotogram_Logo.svg" alt="Fotogram Logo"
+                ><img
+                    src="./assets/svg/Fotogram_Logo.svg"
+                    onclick="loadAlbums()"
+                    alt="Fotogram Logo"
             /></a>
         </header>
 
         <main>
-            <section class="album">
-                <header>
-                    <h2 class="white t-alig-center marg-top-64 fs64">
-                        Animals
-                    </h2>
-                </header>
-                <nav class="gallery flex marg-top-64 justify-c-center">
-                    <div class="gallery-img">
-                        <img src="./img/cat/Maxi-und-Amy.jpeg" />
-                    </div>
-                    <div class="gallery-img">
-                        <img src="./img/cat/Amy.jpeg" />
-                    </div>
-                    <div class="gallery-img">
-                        <img src="./img/cat/Lilly.jpeg" />
-                    </div>
-                </nav>
-
-                <header>
-                    <h2 class="white t-alig-center marg-top-64 fs64">
-                        Cars I've driven
-                    </h2>
-                </header>
-                <nav class="gallery flex marg-top-64 justify-c-center">
-                    <div class="gallery-img">
-                        <img src="./img/cars/bmw-1.jpeg" />
-                    </div>
-                    <div class="gallery-img">
-                        <img src="./img/cars/bmw-2.jpeg" />
-                    </div>
-                    <div class="gallery-img">
-                        <img src="./img/cars/bmw-sunset.jpeg" />
-                    </div>
-                    <div class="gallery-img">
-                        <img src="./img/cars/passat-1.jpeg" />
-                    </div>
-                    <div class="gallery-img">
-                        <img src="./img/cars/passat-2.jpeg" />
-                    </div>
-                    <div class="gallery-img">
-                        <img src="./img/cars/passat-snow.jpeg" />
-                    </div>
-                </nav>
+            <section
+                id="album"
+                class="album flex flex-dir-column justify-c-center t-alig-center"
+            >
+                <h1 id="h1" class="white fs76"></h1>
+                <nav
+                    id="image-container"
+                    class="gallery flex marg-top-64 justify-c-center"
+                ></nav>
             </section>
+            <div class="fullscreen-img"></div>
         </main>
 
         <footer class="marg-top-64 flex justify-c-center align-i-center">
@@ -72,5 +42,8 @@
                 ><img src="./assets/favicon/favicon.png" alt="Fotogram Logo"
             /></a>
         </footer>
+
+        <script src="./assets/script/init.js"></script>
+        <script src="./assets/script/loadAlbum.js"></script>
     </body>
 </html>
