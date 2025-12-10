@@ -1,5 +1,16 @@
 const albumContainer = document.getElementById("image-container");
 const h1 = document.getElementById("h1");
+const dialog = document.getElementById("fs_dialog");
+
+function dialogReset() {
+    dialog.innerHTML = `                
+                    <img
+                    src="./assets/svg/Back_Arrow.svg"
+                    alt="Zurück zum Album"
+                    class="back_dialog"
+                    onclick="closeDialog()"
+                />`
+}
 
 let album_list = [
     { title: "Animals", src: "./img/albumCover/1.png", clickFunction: "loadAlbum(1)" },

@@ -19,10 +19,12 @@ function loadAlbum(selec) {
     albumContainer.innerHTML += `<img src="./assets/svg/Back_Arrow.svg" alt="Zurück zur Startseite" class="back" onclick="loadAlbums()"/>`;
 
     if (selec == 1) {
+        const selec = 1;
+
         for (let { title, src } of animals_images) {
             albumContainer.innerHTML += `
             <div class="gallery-img">
-            <img src="${src}" alt="${title}">
+            <img src="${src}" alt="${title}" onclick="showDialog(src)">
             </div>
         `;
         }
@@ -32,10 +34,12 @@ function loadAlbum(selec) {
     }
 
     if (selec == 2) {
+        const selec = 2;
+
         for (let { title, src } of cars_images) {
             albumContainer.innerHTML += `
             <div class="gallery-img">
-            <img src="${src}" alt="${title}">
+            <img src="${src}" alt="${title}" onclick="showDialog(src)">
             </div>
         `;
         }

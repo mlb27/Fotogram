@@ -67,8 +67,44 @@ footer img {
     transition: all 0.25s ease;
 }
 
-.back{
+.back {
     width: 48px;
     height: 48px;
     filter: invert(1);
+}
+
+.back_dialog {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    padding: 10px;
+    filter: invert(1);
+}
+
+.fullscreen_image {
+    object-fit: cover;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.fullscreen_dialog {
+    height: 80vh;
+    width: 80vh;
+}
+
+dialog {
+    padding: 3px;
+    overflow: hidden;
+    /* background: linear-gradient(
+        var(--gradient-angle),
+        rgba(160, 240, 253, 1) 0%,
+        rgba(135, 50, 248, 1) 33%,
+        rgba(246, 78, 133, 1) 66%,
+        rgba(247, 138, 76, 1) 100%
+    ); */
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(10px);
 }

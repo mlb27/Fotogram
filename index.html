@@ -13,7 +13,7 @@
         />
         <title>Fotogram</title>
     </head>
-    <body onload="loadAlbums()">
+    <body onload="loadAlbums(), dialogReset()">
         <header class="site-header flex align-i-center">
             <a href="#"
                 ><img
@@ -34,7 +34,9 @@
                     class="gallery flex marg-top-64 justify-c-center"
                 ></nav>
             </section>
-            <div class="fullscreen-img"></div>
+
+            <dialog id="fs_dialog" class="fullscreen_dialog">
+            </dialog>
         </main>
 
         <footer class="marg-top-64 flex justify-c-center align-i-center">
@@ -45,5 +47,6 @@
 
         <script src="./assets/script/init.js"></script>
         <script src="./assets/script/loadAlbum.js"></script>
+        <script src="./assets/script/dialog.js"></script>
     </body>
 </html>
