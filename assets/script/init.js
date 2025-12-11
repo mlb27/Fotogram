@@ -5,11 +5,16 @@ const dialog = document.getElementById("fs_dialog");
 function dialogReset() {
     dialog.innerHTML = `                
                     <img
-                    src="./assets/svg/Back_Arrow.svg"
-                    alt="Zurück zum Album"
-                    class="back_dialog"
-                    onclick="closeDialog()"
-                />`
+                        src="./assets/svg/Back_Arrow.svg"
+                        alt="Zurück zum Album"
+                        class="back_dialog"
+                        onclick="closeDialog()"
+                    />
+                    <div class="angle">
+                        <img src="./assets/svg/angle-left.svg" alt="" onclick="lastImage()"/>
+                        <img src="./assets/svg/angle-right.svg" alt="" onclick="nextImage()"/>
+                    </div>
+                `
 }
 
 let album_list = [

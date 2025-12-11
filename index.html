@@ -13,7 +13,7 @@
         />
         <title>Fotogram</title>
     </head>
-    <body onload="loadAlbums(), dialogReset()">
+    <body onload="loadAlbums(), dialogReset(), closeDialog()">
         <header class="site-header flex align-i-center">
             <a href="#"
                 ><img
@@ -35,8 +35,7 @@
                 ></nav>
             </section>
 
-            <dialog id="fs_dialog" class="fullscreen_dialog">
-            </dialog>
+            <dialog id="fs_dialog" class="fullscreen_dialog"></dialog>
         </main>
 
         <footer class="marg-top-64 flex justify-c-center align-i-center">

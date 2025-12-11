@@ -21,10 +21,11 @@ function loadAlbum(selec) {
     if (selec == 1) {
         const selec = 1;
 
-        for (let { title, src } of animals_images) {
+        for (let [index, { title, src }] of animals_images.entries()) {
+            let album = "animals_images";
             albumContainer.innerHTML += `
             <div class="gallery-img">
-            <img src="${src}" alt="${title}" onclick="showDialog(src)">
+            <img src="${src}" alt="${title}" onclick="showDialog(src, ${index})">
             </div>
         `;
         }
@@ -36,10 +37,10 @@ function loadAlbum(selec) {
     if (selec == 2) {
         const selec = 2;
 
-        for (let { title, src } of cars_images) {
+        for (let [index, { title, src }] of cars_images.entries()) {
             albumContainer.innerHTML += `
             <div class="gallery-img">
-            <img src="${src}" alt="${title}" onclick="showDialog(src)">
+            <img src="${src}" alt="${title}" onclick="showDialog(src, ${index})">
             </div>
         `;
         }
