@@ -1,16 +1,24 @@
 @font-face {
-    font-family: "Patrick Hand";
-    src: url("./assets/font/PatrickHand-Regular.ttf")
+    font-family: "Roboto", sans-serif;
+    src: url("./assets/font/Roboto-VariableFont_wdth,wght.ttf")
         format("truetype-variations");
 }
 
 html,
 body {
-    font-family: "Patrick Hand", cursive;
+    font-family: "Roboto", sans-serif;
 }
 
 body {
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    align-content: center;
 }
 
 .smooth-scroll {

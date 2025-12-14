@@ -1,57 +1,73 @@
 let currentImageIndex = 0;
+let toLoad = 0;
+let isInAlbum = 0;
 
 function showDialog(image, index) {
     currentImageIndex = index;
-    console.log(currentImageIndex);
-
-
+    dialogReset();
     dialog.innerHTML += `<img src="${image}" alt="" class="fullscreen_image"/>`;
-    dialog.showModal();
+    if (!dialog.open) {
+        dialog.showModal();
+    }
 }
-
 function closeDialog() {
     dialog.close()
+
     dialogReset();
 }
 
 function lastImage() {
-    console.log(currentImageIndex);
-    if (currentImageIndex == 0) {
-        return;
+    let currentAlbumData;
 
-    }
-    else {
-        console.log(currentImageIndex);
-        let toLoad = currentImageIndex - 1;
-        console.log(toLoad);
+    if (userCurrentlyinAlbum === 1) {
+        currentAlbumData = album_1;
 
-        dialog.innerHTML = "";
-        dialogReset();
-        showDialog(animals_images[toLoad].src, toLoad);
+    } else {
+        currentAlbumData = album_2;
     }
 
+    currentImageIndex = currentImageIndex - 1;
+
+    if (currentImageIndex < 0) {
+        currentImageIndex = currentAlbumData.length - 1;
+    }
+
+    let newImageSrc = currentAlbumData[currentImageIndex].src;
+
+    showDialog(newImageSrc, currentImageIndex)
 }
 
 function nextImage() {
-    console.log(currentImageIndex);
-    if (currentImageIndex == 0) {
-        let toLoad = currentImageIndex + 1;
-        console.log(toLoad);
+    let currentAlbumData;
 
-        dialog.innerHTML = "";
-        dialogReset();
-        showDialog(animals_images[toLoad].src, toLoad);
+    if (userCurrentlyinAlbum === 1) {
+        currentAlbumData = album_1;
+
+    } else {
+        currentAlbumData = album_2;
     }
-    else if (currentImageIndex > 0) {
 
-        let toLoad = currentImageIndex + 1;
-        console.log(toLoad);
+    currentImageIndex = currentImageIndex + 1;
 
-        dialog.innerHTML = "";
-        dialogReset();
-        showDialog(animals_images[toLoad].src, toLoad);
+    if (currentImageIndex >= currentAlbumData.length) {
+        currentImageIndex = 0;
     }
-    // else if (currentImageIndex + 1 > animals_images[toLoad].index) {
-    //     return "nein";
-    // }
+
+    let newImageSrc = currentAlbumData[currentImageIndex].src;
+
+    showDialog(newImageSrc, currentImageIndex)
 }
+
+window.addEventListener("keydown", function (e) {
+    if (!dialog.open) return;
+
+    if (e.key === "ArrowLeft") {
+        lastImage();
+    }
+    else if (e.key === "ArrowRight") {
+        nextImage();
+    }
+    else if (e.key === "Escape") {
+        closeDialog();
+    }
+});
