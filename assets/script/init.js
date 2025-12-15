@@ -28,6 +28,13 @@ let album_list = [
 
 function loadAlbums() {
     albumContainer.innerHTML = ""; // div "image-container" zurücksetzen
+    
+    if (albumContainer.classList.contains("grid-repeat5")) {
+        albumContainer.classList.remove("grid-repeat5")
+    }
+
+    albumContainer.classList.add("grid-repeat2")
+
     h1.innerHTML = "Albums";
 
     for (let { title, src, clickFunction } of album_list) {

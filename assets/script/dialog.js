@@ -59,7 +59,9 @@ function nextImage() {
 }
 
 window.addEventListener("keydown", function (e) {
-    if (!dialog.open) return;
+    if (!dialog.open) {
+        return;
+    }
 
     if (e.key === "ArrowLeft") {
         lastImage();
