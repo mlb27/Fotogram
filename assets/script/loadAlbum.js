@@ -3,7 +3,7 @@ let album_1 = [
     { title: "Amy enjoying the view", src: "./img/animals/Amy.jpg" },
     { title: "Little Maxi and Amy sleeping peacefully", src: "./img/animals/Baby-Maxi-und-Amy.jpg" },
     { title: "Lilly exploring nature", src: "./img/animals/Lilly.jpeg" },
-    { title: "Amy licking her paw", src: "./img/animals/Amy-Chilling.jpg" },
+    { title: "Amy licking her paw", src: "./img/animals/Amy-Chilling.JPG" },
     { title: "Baby Maxi and Amy cuddling", src: "./img/animals/Maxi-And-Amy-Baby.jpg" },
     { title: "Rudy grinning", src: "./img/animals/rudy-grin.jpeg" },
     { title: "Rudy's very long", src: "./img/animals/rudy-long.jpeg" },
