@@ -15,12 +15,18 @@
     </head>
     <body onload="loadAlbums(), dialogReset(), closeDialog()">
         <header class="site-header flex align-i-center">
-            <a href="#"
-                ><img
-                    src="./assets/svg/Fotogram_Logo.svg"
-                    onclick="loadAlbums()"
-                    alt="Fotogram Logo"
-            /></a>
+            <a href="#">
+                <picture>
+                    <source
+                        media="(max-width: 475px)"
+                        srcset="./assets/favicon/favicon.png"
+                    />
+                    <img
+                        src="./assets/svg/Fotogram_Logo.svg"
+                        onclick="loadAlbums(), dialogReset(), closeDialog()"
+                        alt="Fotogram Logo"
+                    /> </picture
+            ></a>
         </header>
 
         <main>

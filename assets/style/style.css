@@ -12,23 +12,31 @@ body {
     background-color: #1b1a55;
 }
 
-.gallery {
-    gap: 32px;
-    display: grid;
-}
+/* Gallerie Reihenfolge */
 
 .grid-repeat2 {
+    /* Default Value Startscreen */
     grid-template-columns: repeat(2, 256px);
 }
 
 .grid-repeat5 {
+    /* Default Value Album Bilder overview 2560 */
     grid-template-columns: repeat(5, 256px);
 }
+
+/* Rotation Value für Hover Animation */
 
 @property --gradient-angle {
     syntax: "<angle>";
     initial-value: 180deg;
     inherits: false;
+}
+
+/* Gallerie */
+
+.gallery {
+    gap: 32px;
+    display: grid;
 }
 
 .gallery-img {
@@ -61,31 +69,20 @@ body {
     cursor: pointer;
 }
 
-footer {
-    padding: 0 64px;
-    height: 96px;
-
-    background-color: #070f2b;
-}
-
-footer img {
-    height: 64px;
-}
-
 .album {
     transition: all 0.25s ease;
 }
+
+/* Back Buttons */
 
 .back {
     width: 48px;
     height: 48px;
     filter: invert(1);
 }
-
 .back:hover {
     cursor: pointer;
 }
-
 .back_dialog {
     width: 48px;
     height: 48px;
@@ -94,22 +91,11 @@ footer img {
     filter: invert(1);
     z-index: 10;
 }
-
 .back_dialog:hover {
     cursor: pointer;
 }
 
-.fullscreen_image {
-    object-fit: cover;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    border-radius: 16px;
-}
-
-.fullscreen_dialog {
-    height: 90vh;
-}
+/* Dialog */
 
 dialog {
     flex-direction: column;
@@ -131,10 +117,25 @@ dialog {
         rgba(247, 138, 76, 1) 100%
     );
 }
-
 dialog::backdrop {
     backdrop-filter: blur(10px);
 }
+
+/* Das im Dialog zu anzeigende Image */
+
+.fullscreen_image {
+    object-fit: cover;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    border-radius: 16px;
+}
+
+.fullscreen_dialog {
+    height: 90vh;
+}
+
+/* Vor und Zurück Pfeile */
 
 .angle img {
     width: 48px;
@@ -142,7 +143,6 @@ dialog::backdrop {
     padding: 10px;
     filter: invert(1);
 }
-
 .angle {
     padding-bottom: 10px;
     bottom: 0;
@@ -156,20 +156,170 @@ dialog::backdrop {
     width: 100%;
     left: 0;
 }
-
 .angle img:hover {
     cursor: pointer;
 }
 
+/* Footer */
+
 footer {
+    padding: 0 64px;
+    height: 96px;
+
+    background-color: #070f2b;
+
     gap: 32px;
 }
-
+footer img {
+    height: 64px;
+}
 .footer-link {
     transition: all 0.25s ease;
 }
-
 .footer-link:hover {
     filter: drop-shadow(0px 0px 8px #ffffff);
     transition: all 0.25s ease;
+}
+
+@media (max-width: 1440px) {
+    .grid-repeat2 {
+        grid-template-columns: repeat(2, 256px);
+    }
+
+    .grid-repeat5 {
+        grid-template-columns: repeat(4, 256px);
+    }
+}
+
+@media (max-width: 1200px) {
+    .grid-repeat2 {
+        grid-template-columns: repeat(2, 200px);
+    }
+
+    .grid-repeat5 {
+        grid-template-columns: repeat(4, 200px);
+    }
+
+    .gallery {
+        gap: 16px;
+    }
+
+    .gallery-img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 900px) {
+    .grid-repeat2 {
+        grid-template-columns: repeat(2, 200px);
+    }
+
+    .grid-repeat5 {
+        grid-template-columns: repeat(3, 200px);
+    }
+
+    .gallery {
+        gap: 16px;
+    }
+
+    .gallery-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .fullscreen_dialog {
+        height: 80vh;
+    }
+}
+
+@media (max-width: 800px) {
+    .fullscreen_dialog {
+        height: 70vh;
+    }
+}
+
+@media (max-width: 700px) {
+    .grid-repeat2 {
+        grid-template-columns: repeat(2, 240px);
+    }
+
+    .grid-repeat5 {
+        grid-template-columns: repeat(2, 240px);
+    }
+
+    .gallery {
+        gap: 16px;
+    }
+
+    .gallery-img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .fullscreen_dialog {
+        height: 60vh;
+    }
+}
+
+@media (max-width: 600px) {
+    .fullscreen_dialog {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 550px) {
+    .grid-repeat2 {
+        grid-template-columns: repeat(2, 200px);
+    }
+
+    .grid-repeat5 {
+        grid-template-columns: repeat(2, 200px);
+    }
+
+    .gallery-img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 500px) {
+    .fullscreen_dialog {
+        height: 40vh;
+    }
+}
+
+@media (max-width: 475px) {
+    .grid-repeat2 {
+        grid-template-columns: repeat(1, 250px);
+        gap: 48px;
+    }
+
+    .grid-repeat5 {
+        grid-template-columns: repeat(1, 250px);
+    }
+
+    .gallery-img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 425px) {
+    .grid-repeat2 {
+        grid-template-columns: repeat(1, 200px);
+    }
+
+    .grid-repeat5 {
+        grid-template-columns: repeat(1, 200px);
+    }
+
+    .gallery-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .fullscreen_dialog {
+        height: 30vh;
+    }
 }
