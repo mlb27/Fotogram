@@ -10,15 +10,16 @@ let album_1 = [
     { title: "Rudy observing nature", src: "./img/animals/rudy-1.jpeg" },
 ];
 let album_2 = [
-    { title: "BMW identifying as a bus", src: "./img/cars/bmw-1.jpeg" },
-    { title: "BMW at beautiful scenery", src: "./img/cars/bmw-2.jpeg" },
+    { title: "BMW identifying as a bus", src: "./img/cars/bmw-1.png" },
+    { title: "BMW at beautiful scenery", src: "./img/cars/bmw-2.png" },
     { title: "BMW in front of a beautiful sunset", src: "./img/cars/bmw-sunset.jpeg" },
-    { title: "Close-up of passat", src: "./img/cars/passat-1.jpeg" },
-    { title: "Passat showing off his cheeky grin", src: "./img/cars/passat-2.jpeg" },
+    { title: "Passat showing off his cheeky grin", src: "./img/cars/passat-2.png" },
     { title: "Passat chilling with snow", src: "./img/cars/passat-snow.jpeg" },
+    { title: "Passat chilling at gas station", src: "./img/cars/passat-gasstation.jpeg" },
     { title: "Audi R8 struts in front of beautiful scenery", src: "./img/cars/audi-r8.png" },
     { title: "Audi enjoying snowfall", src: "./img/cars/audi-snow.png" },
     { title: "Beautiful Mercedes C Class", src: "./img/cars/mercedes-1.png" },
+    { title: "Amazing BMW Suv at beautiful scenery", src: "./img/cars/bmw-3.png" },
 ]
 
 function loadAlbum(selec) {
