@@ -4,8 +4,8 @@ const h1 = document.getElementById("h1"); // h1 Title "Albums"
 
 let userCurrentlyinAlbum = 0;
 let album_list = [
-    { title: "Animals Album Cover", src: "./img/albumCover/1.png", clickFunction: "loadAlbum(1)" },
-    { title: "Cars Album Cover", src: "./img/albumCover/2.png", clickFunction: "loadAlbum(2)" },
+    { title: "Animals", src: "./img/albumCover/1.png", clickFunction: "loadAlbum(1)", alt: "Animals Album Cover" },
+    { title: "Cars", src: "./img/albumCover/2.png", clickFunction: "loadAlbum(2)", alt: "Cars Album Cover" },
 ]
 
 function init() {
@@ -28,10 +28,10 @@ function init() {
     }
     albumContainer.classList.add("grid-repeat2")
     h1.innerHTML = "Albums";
-    for (let { title, src, clickFunction } of album_list) {
+    for (let { title, src, clickFunction, alt } of album_list) {
         albumContainer.innerHTML += `
             <div class="gallery-img">
-            <img src="${src}" onclick="${clickFunction}" alt="${title}">
+            <img src="${src}" onclick="${clickFunction}" alt="${alt}">
             <h2 class="white t-alig-center pad-top-12">${title}</h2>
             </div>
         `;
