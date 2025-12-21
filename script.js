@@ -4,8 +4,8 @@ const h1 = document.getElementById("h1"); // h1 Title "Albums"
 
 let userCurrentlyinAlbum = 0;
 let album_list = [
-    { title: "Animals", src: "./img/albumCover/1.png", clickFunction: "loadAlbum(1)" },
-    { title: "Cars", src: "./img/albumCover/2.png", clickFunction: "loadAlbum(2)" },
+    { title: "Animals Album Cover", src: "./img/albumCover/1.png", clickFunction: "loadAlbum(1)" },
+    { title: "Cars Album Cover", src: "./img/albumCover/2.png", clickFunction: "loadAlbum(2)" },
 ]
 
 function init() {
