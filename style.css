@@ -100,6 +100,8 @@ body {
 dialog {
     flex-direction: column;
     position: fixed;
+    width: 90vw;
+    height: 100vh;
 
     outline: none;
     border: none;
@@ -321,5 +323,9 @@ footer img {
 
     .fullscreen_dialog {
         height: 30vh;
+    }
+
+    .fs76 {
+        font-size: 48px;
     }
 }

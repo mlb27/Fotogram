@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./assets/style/base.css" />
-        <link rel="stylesheet" href="./assets/style/util.css" />
-        <link rel="stylesheet" href="./assets/style/style.css" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="./css/base.css" />
+        <link rel="stylesheet" href="./css/util.css" />
         <link
             rel="shortcut icon"
             href="./assets/favicon/favicon.svg"
@@ -13,9 +13,9 @@
         />
         <title>Fotogram</title>
     </head>
-    <body onload="loadAlbums(), dialogReset(), closeDialog()">
+    <body onload="init()">
         <header class="site-header flex align-i-center">
-            <a href="#">
+            <a href="index.html">
                 <picture>
                     <source
                         media="(max-width: 475px)"
@@ -23,12 +23,11 @@
                     />
                     <img
                         src="./assets/svg/Fotogram_Logo.svg"
-                        onclick="loadAlbums(), dialogReset(), closeDialog()"
+                        onclick="init()"
                         alt="Fotogram Logo"
                     /> </picture
             ></a>
         </header>
-
         <main>
             <section
                 id="album"
@@ -43,13 +42,12 @@
 
             <dialog id="fs_dialog" class="fullscreen_dialog"></dialog>
         </main>
-
         <footer class="marg-top-64 flex justify-c-center align-i-center">
             <a href="index.html"
                 ><img
                     src="./assets/favicon/favicon.png"
                     alt="Fotogram Logo"
-                    onclick="loadAlbums(), dialogReset(), closeDialog()"
+                    onclick="init()"
             /></a>
             <nav class="footer-links">
                 <a class="text-dec-none footer-link" href=""
@@ -60,9 +58,8 @@
                 >
             </nav>
         </footer>
-
-        <script src="./assets/script/init.js"></script>
-        <script src="./assets/script/loadAlbum.js"></script>
-        <script src="./assets/script/dialog.js"></script>
+        <script src="./script.js"></script>
+        <script src="./script/loadAlbum.js"></script>
+        <script src="./script/dialog.js"></script>
     </body>
 </html>

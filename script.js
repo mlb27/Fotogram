@@ -3,8 +3,12 @@ const dialog = document.getElementById("fs_dialog");
 const h1 = document.getElementById("h1"); // h1 Title "Albums"
 
 let userCurrentlyinAlbum = 0;
+let album_list = [
+    { title: "Animals", src: "./img/albumCover/1.png", clickFunction: "loadAlbum(1)" },
+    { title: "Cars", src: "./img/albumCover/2.png", clickFunction: "loadAlbum(2)" },
+]
 
-function dialogReset() {
+function init() {
     dialog.innerHTML = `                
                     <img
                         src="./assets/svg/Back_Arrow.svg"
@@ -17,26 +21,13 @@ function dialogReset() {
                         <img src="./assets/svg/angle-right.svg" alt="" onclick="nextImage()"/>
                     </div>
                 `
-}
-
-// Albums laden
-
-let album_list = [
-    { title: "Animals", src: "./img/albumCover/1.png", clickFunction: "loadAlbum(1)" },
-    { title: "Cars", src: "./img/albumCover/2.png", clickFunction: "loadAlbum(2)" },
-]
-
-function loadAlbums() {
+    // Albums laden
     albumContainer.innerHTML = ""; // div "image-container" zurücksetzen
-    
     if (albumContainer.classList.contains("grid-repeat5")) {
         albumContainer.classList.remove("grid-repeat5")
     }
-
     albumContainer.classList.add("grid-repeat2")
-
     h1.innerHTML = "Albums";
-
     for (let { title, src, clickFunction } of album_list) {
         albumContainer.innerHTML += `
             <div class="gallery-img">

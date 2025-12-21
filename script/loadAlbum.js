@@ -22,19 +22,15 @@ let album_2 = [
     { title: "Amazing BMW Suv at beautiful scenery", src: "./img/cars/bmw-3.png" },
 ]
 
-function loadAlbum(selec) {
+function loadAlbum(selected) {
     albumContainer.innerHTML = "";
     albumContainer.innerHTML += `<img src="./assets/svg/Back_Arrow.svg" alt="Zurück zur Startseite" class="back" onclick="loadAlbums()"/>`;
-
     if (albumContainer.classList.contains("grid-repeat2")) {
         albumContainer.classList.remove("grid-repeat2")
     }
-
     albumContainer.classList.add("grid-repeat5")
-
-    if (selec == 1) {
+    if (selected == 1) {
         h1.innerHTML = "Animals";
-
         for (let [index, { title, src }] of album_1.entries()) {
             userCurrentlyinAlbum = 1;
             albumContainer.innerHTML += `
@@ -43,12 +39,9 @@ function loadAlbum(selec) {
             </div>
         `;
         }
-
     }
-
-    if (selec == 2) {
+    if (selected == 2) {
         h1.innerHTML = "Cars";
-
         for (let [index, { title, src }] of album_2.entries()) {
             userCurrentlyinAlbum = 2;
             albumContainer.innerHTML += `
