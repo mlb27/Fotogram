@@ -88,11 +88,49 @@ body {
     height: 48px;
     position: absolute;
     padding: 10px;
-    filter: invert(1);
     z-index: 10;
+    background-image: url("./assets/svg/Back_Arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: transparent;
+    filter: invert(1);
+    border: none;
 }
 .back_dialog:hover {
     cursor: pointer;
+}
+
+/* Dialog Buttons */
+
+.lastimagebutton {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    padding: 10px;
+    z-index: 10;
+    background-image: url("./assets/svg/angle-left.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: transparent;
+    filter: invert(1);
+    border: none;
+}
+
+.nextimagebutton {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    padding: 10px;
+    z-index: 10;
+    background-image: url("./assets/svg/angle-right.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: transparent;
+    filter: invert(1);
+    border: none;
 }
 
 /* Dialog */

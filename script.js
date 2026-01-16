@@ -10,15 +10,15 @@ let album_list = [
 
 function init() {
     dialog.innerHTML = `                
-                    <img
+                    <button
                         src="./assets/svg/Back_Arrow.svg"
                         alt="Zurück zum Album"
                         class="back_dialog"
                         onclick="closeDialog()"
-                    />
+                    ></button>
                     <div class="angle">
-                        <img src="./assets/svg/angle-left.svg" alt="" onclick="lastImage()"/>
-                        <img src="./assets/svg/angle-right.svg" alt="" onclick="nextImage()"/>
+                        <button class="lastimagebutton" alt="letztes Bild" onclick="lastImage()"></button>
+                        <button class="nextimagebutton" alt="nächstes Bild" onclick="nextImage()"/></button>
                     </div>
                 `
     // Albums laden

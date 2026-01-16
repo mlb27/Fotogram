@@ -24,7 +24,7 @@ let album_2 = [
 
 function loadAlbum(selected) {
     albumContainer.innerHTML = "";
-    albumContainer.innerHTML += `<img src="./assets/svg/Back_Arrow.svg" alt="Zurück zur Startseite" class="back" onclick="loadAlbums()"/>`;
+    albumContainer.innerHTML += `<img src="./assets/svg/Back_Arrow.svg" alt="Zurück zur Startseite" class="back" onclick="init()"/>`;
     if (albumContainer.classList.contains("grid-repeat2")) {
         albumContainer.classList.remove("grid-repeat2")
     }
