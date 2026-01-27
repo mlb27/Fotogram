@@ -33,3 +33,8 @@ p {
     margin-block-end: 0;
     margin-block-start: 0;
 }
+
+button {
+    appearance: none;
+    display: flex;
+}

@@ -23,7 +23,7 @@ let album_2 = [
 ]
 
 function loadAlbum(selected) {
-    albumContainer.innerHTML = "";
+    albumContainer.innerHTML = ""; // Dialog Container clearen
     albumContainer.innerHTML += `<img src="./assets/svg/Back_Arrow.svg" alt="Zurück zur Startseite" class="back" onclick="init()"/>`;
     if (albumContainer.classList.contains("grid-repeat2")) {
         albumContainer.classList.remove("grid-repeat2")
@@ -33,22 +33,18 @@ function loadAlbum(selected) {
         h1.innerHTML = "Animals";
         for (let [index, { title, src }] of album_1.entries()) {
             userCurrentlyinAlbum = 1;
-            albumContainer.innerHTML += `
-            <div class="gallery-img">
-            <img src="${src}" alt="${title}" onclick="showDialog(src, ${index})">
-            </div>
-        `;
+            albumContainer.innerHTML += `<div class="gallery-img">
+                                            <img src="${src}" alt="${title}" onclick="showDialog(src, ${index})">
+                                        </div>`;
         }
     }
     if (selected == 2) {
         h1.innerHTML = "Cars";
         for (let [index, { title, src }] of album_2.entries()) {
             userCurrentlyinAlbum = 2;
-            albumContainer.innerHTML += `
-            <div class="gallery-img">
-            <img src="${src}" alt="${title}" onclick="showDialog(src, ${index}, ${userCurrentlyinAlbum})">
-            </div>
-        `;
+            albumContainer.innerHTML += `<div class="gallery-img">
+                                            <img src="${src}" alt="${title}" onclick="showDialog(src, ${index}, ${userCurrentlyinAlbum})">
+                                        </div>`;
         }
     }
 }

@@ -59,3 +59,17 @@ window.addEventListener("keydown", function (e) {
         closeDialog();
     }
 });
+
+dialog.addEventListener("click", (event) => {
+    if (!dialog.open) return;
+    const rect = dialog.getBoundingClientRect();
+    const istInDialog = (
+        event.clientX >= rect.left &&
+        event.clientX <= rect.right &&
+        event.clientY >= rect.top &&
+        event.clientY <= rect.bottom
+    );
+    if (!istInDialog) {
+        closeDialog();
+    }
+});

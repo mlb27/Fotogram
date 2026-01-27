@@ -9,18 +9,16 @@ let album_list = [
 ]
 
 function init() {
-    dialog.innerHTML = `                
-                    <button
-                        src="./assets/svg/Back_Arrow.svg"
-                        alt="Zurück zum Album"
-                        class="back_dialog"
-                        onclick="closeDialog()"
-                    ></button>
-                    <div class="angle">
-                        <button class="lastimagebutton" alt="letztes Bild" onclick="lastImage()"></button>
-                        <button class="nextimagebutton" alt="nächstes Bild" onclick="nextImage()"/></button>
-                    </div>
-                `
+    dialog.innerHTML = `<button
+                            src="./assets/svg/Back_Arrow.svg"
+                            alt="Zurück zum Album"
+                            class="back_dialog"
+                            onclick="closeDialog()">
+                        </button>
+                        <div class="angle">
+                            <button class="lastimagebutton" alt="letztes Bild" onclick="lastImage()"></button>
+                            <button class="nextimagebutton" alt="nächstes Bild" onclick="nextImage()"/></button>
+                        </div>`
     // Albums laden
     albumContainer.innerHTML = ""; // div "image-container" zurücksetzen
     if (albumContainer.classList.contains("grid-repeat5")) {
