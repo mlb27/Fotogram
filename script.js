@@ -3,18 +3,19 @@ const dialog = document.getElementById("fs_dialog");
 const h1 = document.getElementById("h1");
 const dialogInnerHTML = `<button
                             type="button"
-                            src="./assets/svg/Back_Arrow.svg"
-                            alt="Zurück zum Album"
+                            aria-label="Zurück zum Album"
                             class="back_dialog"
                             onclick="closeDialog()">
                         </button>
                         <div class="angle">
-                            <button type="button" class="lastimagebutton" alt="letztes Bild" onclick="lastImage()"></button>
-                            <button type="button" class="nextimagebutton" alt="nächstes Bild" onclick="nextImage()"></button>
+                            <button type="button" class="lastimagebutton" aria-label="letztes Bild" onclick="lastImage()"></button>
+                            <button type="button" class="nextimagebutton" aria-label="nächstes Bild" onclick="nextImage()"></button>
                         </div>`;
 const albumContainerInnerHTML = (src, clickFunction, alt, title) => `
     <div class="gallery-img">
-        <img src="${src}" onclick="${clickFunction}" alt="${alt}">
+        <button type="button" class="gallery-button" onclick="${clickFunction}">
+            <img src="${src}" alt="${alt}">
+        </button>
         <h2 class="white t-alig-center pad-top-12">${title}</h2>
     </div>
 `;

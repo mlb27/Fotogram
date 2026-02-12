@@ -6,7 +6,7 @@ function showDialog(image, index) {
     currentImageIndex = index;
     if (!dialog.open) {
         dialog.innerHTML = dialogInnerHTML;
-        dialog.innerHTML += `<img src="${image}" alt="" class="fullscreen_image"/>`;
+        dialog.innerHTML += `<img src="${image}" class="fullscreen_image"/>`;
         dialog.showModal();
     }
     else {

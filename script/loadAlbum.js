@@ -20,30 +20,34 @@ let album_2 = [
     { title: "Audi enjoying snowfall", src: "./img/cars/audi-snow.png" },
     { title: "Beautiful Mercedes C Class", src: "./img/cars/mercedes-1.png" },
     { title: "Amazing BMW Suv at beautiful scenery", src: "./img/cars/bmw-3.png" },
-]
+];
 
 function loadAlbum(selected) {
     albumContainer.innerHTML = "";
-    albumContainer.innerHTML += `<img src="./assets/svg/Back_Arrow.svg" alt="Zurück zur Startseite" class="back" onclick="init()"/>`;
+    albumContainer.innerHTML += `<button type="button" class="back-button" aria-label="Zurueck zur Startseite" onclick="init()"><img src="./assets/svg/Back_Arrow.svg" alt="" class="back"></button>`;
     if (albumContainer.classList.contains("grid-repeat2")) {
-        albumContainer.classList.remove("grid-repeat2")
+        albumContainer.classList.remove("grid-repeat2");
     }
-    albumContainer.classList.add("grid-repeat5")
+    albumContainer.classList.add("grid-repeat5");
+
     if (selected == 1) {
         h1.innerHTML = "Animals";
+        userCurrentlyinAlbum = 1;
         for (let [index, { title, src }] of album_1.entries()) {
-            userCurrentlyinAlbum = 1;
             albumContainer.innerHTML += `<div class="gallery-img">
-                                            <img src="${src}" alt="${title}" onclick="showDialog(src, ${index})">
+                                            <button type="button" class="gallery-button" onclick="showDialog('${src}', ${index})">
+                                                <img src="${src}" alt="${title}">
+                                            </button>
                                         </div>`;
         }
-    }
-    if (selected == 2) {
+    } else if (selected == 2) {
         h1.innerHTML = "Cars";
+        userCurrentlyinAlbum = 2;
         for (let [index, { title, src }] of album_2.entries()) {
-            userCurrentlyinAlbum = 2;
             albumContainer.innerHTML += `<div class="gallery-img">
-                                            <img src="${src}" alt="${title}" onclick="showDialog(src, ${index}, ${userCurrentlyinAlbum})">
+                                            <button type="button" class="gallery-button" onclick="showDialog('${src}', ${index})">
+                                                <img src="${src}" alt="${title}">
+                                            </button>
                                         </div>`;
         }
     }
