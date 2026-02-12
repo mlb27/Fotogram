@@ -4,45 +4,58 @@ let isInAlbum = 0;
 
 function showDialog(image, index) {
     currentImageIndex = index;
-    init();
-    dialog.innerHTML += `<img src="${image}" alt="" class="fullscreen_image"/>`;
     if (!dialog.open) {
+        dialog.innerHTML = dialogInnerHTML;
+        dialog.innerHTML += `<img src="${image}" alt="" class="fullscreen_image"/>`;
         dialog.showModal();
+    }
+    else {
+        const img = dialog.querySelector(".fullscreen_image");
+        img.src = image;
     }
 }
 
 function closeDialog() {
-    dialog.close()
+    dialog.close();
+}
+
+function getCurrentAlbumData() {
+    let currentAlbumData;
+    if (userCurrentlyinAlbum === 1) {
+        currentAlbumData = album_1;
+    } else {
+        currentAlbumData = album_2;
+    }
+    return currentAlbumData;
+}
+
+function changeImage(direction) {
+    const currentAlbumData = getCurrentAlbumData();
+
+    if (direction === "last") {
+        currentImageIndex = currentImageIndex - 1;
+        if (currentImageIndex < 0) {
+            currentImageIndex = currentAlbumData.length - 1;
+        }
+    } else if (direction === "next") {
+        currentImageIndex = currentImageIndex + 1;
+        if (currentImageIndex >= currentAlbumData.length) {
+            currentImageIndex = 0;
+        }
+    } else {
+        return;
+    }
+
+    let newImageSrc = currentAlbumData[currentImageIndex].src;
+    showDialog(newImageSrc, currentImageIndex);
 }
 
 function lastImage() {
-    let currentAlbumData;
-    if (userCurrentlyinAlbum === 1) {
-        currentAlbumData = album_1;
-    } else {
-        currentAlbumData = album_2;
-    }
-    currentImageIndex = currentImageIndex - 1;
-    if (currentImageIndex < 0) {
-        currentImageIndex = currentAlbumData.length - 1;
-    }
-    let newImageSrc = currentAlbumData[currentImageIndex].src;
-    showDialog(newImageSrc, currentImageIndex)
+    changeImage("last");
 }
 
 function nextImage() {
-    let currentAlbumData;
-    if (userCurrentlyinAlbum === 1) {
-        currentAlbumData = album_1;
-    } else {
-        currentAlbumData = album_2;
-    }
-    currentImageIndex = currentImageIndex + 1;
-    if (currentImageIndex >= currentAlbumData.length) {
-        currentImageIndex = 0;
-    }
-    let newImageSrc = currentAlbumData[currentImageIndex].src;
-    showDialog(newImageSrc, currentImageIndex)
+    changeImage("next");
 }
 
 window.addEventListener("keydown", function (e) {
@@ -50,26 +63,17 @@ window.addEventListener("keydown", function (e) {
         return;
     }
     if (e.key === "ArrowLeft") {
-        lastImage();
-    }
-    else if (e.key === "ArrowRight") {
-        nextImage();
-    }
-    else if (e.key === "Escape") {
+        changeImage("last");
+    } else if (e.key === "ArrowRight") {
+        changeImage("next");
+    } else if (e.key === "Escape") {
         closeDialog();
     }
 });
 
 dialog.addEventListener("click", (event) => {
     if (!dialog.open) return;
-    const rect = dialog.getBoundingClientRect();
-    const istInDialog = (
-        event.clientX >= rect.left &&
-        event.clientX <= rect.right &&
-        event.clientY >= rect.top &&
-        event.clientY <= rect.bottom
-    );
-    if (!istInDialog) {
+    if (event.target === dialog) {
         closeDialog();
     }
 });
