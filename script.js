@@ -45,11 +45,6 @@ function init() {
     albumContainer.classList.add("grid-repeat2");
     h1.innerHTML = "Albums";
     for (let { title, src, clickFunction, alt } of album_list) {
-        albumContainer.innerHTML += albumContainerInnerHTML(
-            src,
-            clickFunction,
-            alt,
-            title
-        );
+        albumContainer.innerHTML += albumContainerInnerHTML(src, clickFunction, alt, title);
     }
 }
