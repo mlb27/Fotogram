@@ -46,33 +46,33 @@ let album_2 = [
     }
 ];
 
-function loadAlbum(selected) {
-    albumContainer.innerHTML = "";
-    albumContainer.innerHTML += `<button type="button" class="back-button" aria-label="Zurueck zur Startseite" onclick="init()"><img src="./assets/svg/Back_Arrow.svg" alt="" class="back"></button>`;
-    if (albumContainer.classList.contains("grid-repeat2")) {
-        albumContainer.classList.remove("grid-repeat2");
-    }
-    albumContainer.classList.add("grid-repeat5");
-
+function getSelectedAlbum(selected) {
     if (selected == 1) {
-        h1.innerHTML = "Animals";
         userCurrentlyinAlbum = 1;
-        for (let [index, { title, src }] of album_1.entries()) {
-            albumContainer.innerHTML += `<div class="gallery-img">
-                                            <button type="button" class="gallery-button" onclick="showDialog('${src}', ${index})">
-                                                <img src="${src}" alt="${title}">
-                                            </button>
-                                        </div>`;
-        }
+        h1.innerHTML = "Animals";
+        return album_1;
     } else if (selected == 2) {
         h1.innerHTML = "Cars";
         userCurrentlyinAlbum = 2;
-        for (let [index, { title, src }] of album_2.entries()) {
-            albumContainer.innerHTML += `<div class="gallery-img">
-                                            <button type="button" class="gallery-button" onclick="showDialog('${src}', ${index})">
-                                                <img src="${src}" alt="${title}">
-                                            </button>
-                                        </div>`;
-        }
+        return album_2;
     }
+}
+
+function loadAlbum(selected) {
+    setPhotoOverviewCssGrid();
+    renderAlbumOverview();
+    let album = getSelectedAlbum(selected);
+    for (let i = 0; i < album.length; i++) {
+        let image = album[i];
+        albumContainer.innerHTML += `<div class="gallery-img">
+            <button type="button" class="gallery-button" onclick="showDialog('${image.src}', ${i})">
+                <img src="${image.src}" alt="${image.title}">
+            </button>
+        </div>`;
+    }
+}
+
+function renderAlbumOverview() {
+    albumContainer.innerHTML = "";
+    albumContainer.innerHTML += `<button type="button" class="back-button" aria-label="Zurueck zur Startseite" onclick="init()"><img src="./assets/svg/Back_Arrow.svg" alt="" class="back"></button>`;
 }

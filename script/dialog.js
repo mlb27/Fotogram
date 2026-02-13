@@ -5,11 +5,10 @@ let isInAlbum = 0;
 function showDialog(image, index) {
     currentImageIndex = index;
     if (!dialog.open) {
-        dialog.innerHTML = dialogInnerHTML;
+        dialog.innerHTML = getDialogInnerHTML();
         dialog.innerHTML += `<img src="${image}" class="fullscreen_image"/>`;
         dialog.showModal();
-    }
-    else {
+    } else {
         const img = dialog.querySelector(".fullscreen_image");
         img.src = image;
     }
@@ -31,7 +30,6 @@ function getCurrentAlbumData() {
 
 function changeImage(direction) {
     const currentAlbumData = getCurrentAlbumData();
-
     if (direction === "last") {
         currentImageIndex = currentImageIndex - 1;
         if (currentImageIndex < 0) {
@@ -42,10 +40,7 @@ function changeImage(direction) {
         if (currentImageIndex >= currentAlbumData.length) {
             currentImageIndex = 0;
         }
-    } else {
-        return;
     }
-
     let newImageSrc = currentAlbumData[currentImageIndex].src;
     showDialog(newImageSrc, currentImageIndex);
 }
@@ -72,7 +67,9 @@ window.addEventListener("keydown", function (e) {
 });
 
 dialog.addEventListener("click", (event) => {
-    if (!dialog.open) return;
+    if (!dialog.open) {
+        return;
+    }
     if (event.target === dialog) {
         closeDialog();
     }
